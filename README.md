@@ -7,3 +7,11 @@ Shiny applications that help understand statistics
 - Open the "app.R" and click on Run App
 
 Tip: Regularly pull current changes for new Apps.
+
+
+Alternatively you can run one of the following commands in your r console. This requires that you have the `shiny` package installed.
+
+```r
+runGitHub("shinystats", "sumidu", subdir = "Korrelationen")
+runGitHub("shinystats", "sumidu", subdir = "Verteilungnen")
+```
