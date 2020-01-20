@@ -14,5 +14,8 @@ Alternatively you can run one of the following commands in your r console. This 
 ```r
 shiny::runGitHub("shinystats", "sumidu", subdir = "Korrelationen")
 
-shiny::runGitHub("shinystats", "sumidu", subdir = "Verteilungnen")
+shiny::runGitHub("shinystats", "sumidu", subdir = "Verteilungen")
+
+shiny::runGitHub("shinystats", "sumidu", subdir = "Histogramme")
+
 ```
