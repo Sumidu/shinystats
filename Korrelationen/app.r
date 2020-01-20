@@ -1,5 +1,6 @@
 library(shiny)
 library(ggplot2)
+library(MASS)
 
 introtext <- "Pearson's r ist ein Maß für den Zusammenhang zwischen zwei Zufallsvariablen X und Y. Im 
 Reiter (Hinführung) findest Du eine kurze Hinführung zur Pearson-Korrelation, im zweiten
@@ -89,9 +90,13 @@ server <- function(input, output) {
     x <- rnorm(n)
     y <- complement(x, rho)
     df <- data.frame(x, y)
-    ggplot(df, aes(x = x, y = y)) + geom_point(alpha = 0.5, color = "dark blue") +
+    
+    Sigma <- matrix(c(10,3,3,2),2,2)
+    #df <- as.data.frame(mvrnorm(n = 1000, rep(0, 2), Sigma, empirical = TRUE))
+    names(df) <- c("x", "y")
+    ggplot(df, aes(x = x, y = y)) + geom_point(alpha = 0.5, color = "blue") +
       labs(title = "Pearson-Korrelation", x = "Variable x", y = "Variable y") +
-      lims(x = c(-4, 4), y = c(-4, 4)) +
+      #lims(x = c(-4, 4), y = c(-4, 4)) +
       theme_minimal() +
       coord_fixed()
     
