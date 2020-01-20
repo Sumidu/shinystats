@@ -21,12 +21,12 @@ ui <- fluidPage(
         sidebarPanel(
             sliderInput("n", "Anzahl Werte", min = 5, max = 1000, value = 25),
             sliderInput("mean_v", "Mittelwert", min = -50, max = 50, value = 0, step = 0.1),
-            sliderInput("sd_v", "Standardabweichung", min = 10, max = 50, value = 10, step = 1),
+            sliderInput("sd_v", "Standardabweichung", min = 10, max = 50, value = 20, step = 1),
             sliderInput("bins",
                         "Anzahl bins:",
                         min = 1,
-                        max = 50,
-                        value = 30)
+                        max = 200,
+                        value = 50)
         ),
 
         # Show a plot of the generated distribution
